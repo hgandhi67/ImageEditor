@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_draw_free_layout"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@color/cardview_dark_background"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/undo_redo_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/undo_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@drawable/ic_undo"
+            android:text="@string/undo_text"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/redo_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/undo_draw"
+            android:drawableBottom="@drawable/ic_redo"
+            android:text="@string/redo_text"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/brush_edit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/undo_redo_layout">
+
+        <View
+            android:id="@+id/anchor"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/anchor">
+
+            <TextView
+                android:id="@+id/thick_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/thickness"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+
+            <com.xw.repo.BubbleSeekBar
+                android:id="@+id/brush_size_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thick_text"
+                android:layout_margin="5dp"
+                app:bsb_bubble_color="@color/colorAccent"
+                app:bsb_hide_bubble="true"
+                app:bsb_max="34.0"
+                app:bsb_min="4"
+                app:bsb_progress="0"
+                app:bsb_second_track_color="@color/colorAccent"
+                app:bsb_show_progress_in_float="false"
+                app:bsb_show_section_text="false"
+                app:bsb_show_thumb_text="false"
+                app:bsb_track_color="#fff" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/anchor">
+
+            <TextView
+                android:id="@+id/alpha_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/alpha"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+
+            <com.xw.repo.BubbleSeekBar
+                android:id="@+id/brush_alpha_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alpha_text"
+                android:layout_margin="5dp"
+                app:bsb_bubble_color="@color/colorAccent"
+                app:bsb_hide_bubble="true"
+                app:bsb_max="255.0"
+                app:bsb_min="0"
+                app:bsb_progress="0"
+                app:bsb_second_track_color="@color/colorAccent"
+                app:bsb_show_progress_in_float="false"
+                app:bsb_show_section_text="false"
+                app:bsb_show_thumb_text="false"
+                app:bsb_track_color="#fff" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/color_picker_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/brush_edit_layout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/color_text"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        app:backgroundTint="@color/colorAccent" />
+</RelativeLayout>

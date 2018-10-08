@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Image Editor</string>
+    <string name="undo_text">Undo</string>
+    <string name="undo_icon">undo icon</string>
+    <string name="redo_text">Redo</string>
+    <string name="redo_icon">redo icon</string>
+    <string name="thickness">Thickness</string>
+    <string name="alpha">Alpha</string>
+    <string name="color_text">Color</string>
+</resources>

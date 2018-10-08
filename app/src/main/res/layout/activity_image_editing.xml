@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".javaclasses.Activities.ImageEditingActivity">
+
+    <RelativeLayout
+        android:id="@+id/main_image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/editing_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
+
+        <com.rm.freedrawview.FreeDrawView
+            android:id="@+id/free_draw_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:paintAlpha="255"
+            app:paintColor="#ff0000"
+            app:paintWidth="4dp"
+            app:resizeBehaviour="crop" />
+
+        <TextView
+            android:id="@+id/text_written"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <include layout="@layout/edit_layout_bottom_sheet" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/edit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_edit"
+        app:layout_anchor="@id/edit_bottom_sheet"
+        app:layout_anchorGravity="top|end" />
+</android.support.design.widget.CoordinatorLayout>
