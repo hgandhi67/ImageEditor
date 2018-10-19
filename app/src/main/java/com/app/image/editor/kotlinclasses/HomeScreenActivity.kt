@@ -50,8 +50,13 @@ class HomeScreenActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             home_screen_browse_pics_textview.setOnClickListener(this)
             home_screen_camera_textview.setOnClickListener(this)
+            getEditedImages()
         }
+    }
 
+
+    override fun onResume() {
+        super.onResume()
         getEditedImages()
     }
 
@@ -103,6 +108,7 @@ class HomeScreenActivity : AppCompatActivity(), View.OnClickListener {
                 grantResults[2] == PackageManager.PERMISSION_GRANTED) {
             home_screen_browse_pics_textview.setOnClickListener(this)
             home_screen_camera_textview.setOnClickListener(this)
+            getEditedImages()
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(perms, REQUEST_CODE)
